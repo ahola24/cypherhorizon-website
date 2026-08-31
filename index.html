@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cypher Horizon — Interim & programmamanagement</title>
-<meta name="description" content="Cypher Horizon B.V. — interim- en programmamanagement op het snijvlak van IT, spoorinfrastructuur en bedrijfsvoering. Jouk ter Hofstede.">
+<meta name="description" content="Cypher Horizon B.V. — interim- en programmamanagement op het snijvlak van IT, infrastructuur en bedrijfsvoering. Jouk ter Hofstede.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
@@ -66,15 +66,10 @@
   .nav-inner{
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    padding: 14px 32px;
+    justify-content:flex-end;
+    padding: 18px 32px;
     max-width: var(--max);
     margin: 0 auto;
-  }
-  .wordmark{
-    display:block;
-    height: 30px;
-    width: auto;
   }
   nav.links{ display:flex; gap: 28px; }
   nav.links a{
@@ -93,15 +88,13 @@
     color: var(--paper);
     padding: 76px 0 92px;
   }
-  .hero-grid{
-    display:grid;
-    grid-template-columns: minmax(0,1fr) 300px;
-    gap: 56px;
-    align-items: start;
+  .hero-content{
+    max-width: 62ch;
   }
   .hero-logo{
-    justify-self: end;
-    width: 260px;
+    height: 130px;
+    width: auto;
+    margin-bottom: 40px;
   }
   .eyebrow-mark{
     display:flex;
@@ -402,8 +395,6 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 860px){
-    .hero-grid{ grid-template-columns: 1fr; }
-    .hero-logo{ justify-self: start; width: 190px; order: -1; margin-bottom: 8px; }
     .pos-grid{ grid-template-columns: 1fr; gap: 40px; }
     .service{ grid-template-columns: 1fr; gap: 10px; }
     .contact-grid{ grid-template-columns: 1fr; gap: 48px; }
@@ -416,7 +407,6 @@
 
 <header class="site-nav">
   <div class="nav-inner">
-    <a href="#top"><img class="wordmark" src="nav-logo.svg" alt="Cypher Horizon"></a>
     <nav class="links">
       <a href="#diensten">Diensten</a>
       <a href="#contact">Contact</a>
@@ -426,28 +416,33 @@
 
 <section class="hero" id="top">
   <div class="wrap hero-grid">
-    <div>
+    <div class="hero-content">
+      <img class="hero-logo" src="hero-logo.svg" alt="Cypher Horizon">
       <div class="eyebrow-mark">
         <span class="signal" aria-hidden="true">
           <i style="height:14px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:6px"></i>
         </span>
       </div>
-      <h1 class="headline">Programma's die vragen om een andere, nieuwe blik op het snijvlak tussen techniek, organisatie en politiek — daar begin ik.</h1>
+      <h1 class="headline">Programma's die vastlopen tussen techniek, organisatie en politiek — daar begin ik.</h1>
       <p class="subhead">Jouk ter Hofstede leidt interim- en programmaopdrachten op het snijvlak van IT, infrastructuur en bedrijfsvoering — van de landelijke uitrol van ERTMS tot digitale transformatie in complexe, bestuurlijk gevoelige omgevingen.</p>
       <div class="cta-row">
         <a href="#contact" class="btn-primary">Plan een kennismaking</a>
         <a href="#diensten" class="link-quiet">Bekijk de diensten</a>
       </div>
     </div>
-    <img class="hero-logo" src="hero-logo.svg" alt="Cypher Horizon logo">
   </div>
 </section>
 
 <section class="positioning">
   <div class="wrap pos-grid">
     <div>
+      <div class="eyebrow-mark">
+        <span class="signal" aria-hidden="true">
+          <i style="height:14px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:6px"></i>
+        </span>
+      </div>
       <h2>Drie werelden die zelden dezelfde persoon spreken</h2>
-      <p>IT'ers kennen zelden de spoorinfrastructuur. Sporexperts missen vaak de IT-achtergrond. Bedrijfskundigen ontberen doorgaans beide. Zestien jaar bij ProRail — van management consultant tot programmamanager landelijke uitrol ERTMS — hebben mij op het snijvlak van deze drie werelden gebracht. Cypher Horizon zet die combinatie in voor opdrachtgevers die verandering moeten leiden in technische, complexe omgevingen.</p>
+      <p>IT'ers kennen zelden de fysieke infrastructuur eronder — spoor, energie, wegen. Infrastructuurspecialisten missen vaak de IT-achtergrond. Bedrijfskundigen ontberen doorgaans beide. Zestien jaar bij ProRail — van management consultant tot programmamanager landelijke uitrol ERTMS — hebben mij op het snijvlak van deze drie werelden gebracht, met het spoor als diepste vakgebied en principes die net zo goed gelden in energie- en weginfrastructuur. Cypher Horizon zet die combinatie in voor opdrachtgevers die verandering moeten leiden in technische, complexe omgevingen.</p>
     </div>
     <div class="domains" aria-hidden="false">
       <div class="domain-row">
@@ -455,7 +450,7 @@
         <span class="domain-bar"></span>
       </div>
       <div class="domain-row">
-        <span class="domain-label">Spoorinfrastructuur</span>
+        <span class="domain-label">Infrastructuur</span>
         <span class="domain-bar"></span>
       </div>
       <div class="domain-row">
@@ -468,6 +463,11 @@
 
 <section class="diensten" id="diensten">
   <div class="wrap">
+    <div class="eyebrow-mark">
+      <span class="signal" aria-hidden="true">
+        <i style="height:14px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:6px"></i>
+      </span>
+    </div>
     <h2>Waar Cypher Horizon wordt ingezet</h2>
 
     <div class="service">
@@ -492,6 +492,11 @@
 <section class="contact" id="contact">
   <div class="wrap contact-grid">
     <div class="contact-info">
+      <div class="eyebrow-mark">
+        <span class="signal" aria-hidden="true">
+          <i style="height:14px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:6px"></i>
+        </span>
+      </div>
       <h2>Aan het woord</h2>
       <p class="lead">Wilt u sparren over een opdracht, of gewoon kennismaken? Een kort gesprek is de snelste manier om te bepalen of Cypher Horizon de juiste partij is.</p>
       <ul class="info-list">
