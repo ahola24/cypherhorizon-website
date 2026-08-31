@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560">
+  <defs>
+    <style>
+      .logo-name { font-family: 'Liberation Sans', sans-serif; font-weight: 700; }
+      .logo-tagline { font-family: 'Liberation Sans', sans-serif; letter-spacing: 6px; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect id="background" x="0" y="0" width="1200" height="560" fill="#09324C"/>
+
+  <!-- Foreground content, centered vertically on the canvas -->
+  <g id="logo-content" transform="translate(0, -24)">
+    <!-- Sun / horizon circle group -->
+    <g id="sun">
+      <circle cx="600" cy="210" r="130" fill="#DFFD06"/>
+
+      <!-- decorative "code/data" marks inside the circle, matching the horizon line's style -->
+      <g id="sun-code-marks" stroke="#09324C" stroke-width="7" stroke-linecap="butt">
+        <line x1="506" y1="270" x2="524" y2="270"/>
+        <line x1="640" y1="250" x2="670" y2="250"/>
+        <line x1="532" y1="190" x2="588" y2="190"/>
+        <line x1="584" y1="130" x2="646" y2="130"/>
+        <line x1="633" y1="165" x2="707" y2="165"/>
+      </g>
+    </g>
+
+    <!-- Horizon line -->
+    <g id="horizon-line">
+      <!-- dashes growing from small marks into the continuous line -->
+      <g id="horizon-dashes" stroke="#DFFD06" stroke-width="4" stroke-linecap="butt">
+        <line x1="140" y1="340" x2="150" y2="340"/>
+        <line x1="172" y1="340" x2="190" y2="340"/>
+        <line x1="208" y1="340" x2="230" y2="340"/>
+        <line x1="246" y1="340" x2="276" y2="340"/>
+        <line x1="290" y1="340" x2="330" y2="340"/>
+        <line x1="342" y1="340" x2="394" y2="340"/>
+        <line x1="404" y1="340" x2="460" y2="340"/>
+        <line x1="468" y1="340" x2="530" y2="340"/>
+        <line x1="536" y1="340" x2="640" y2="340"/>
+      </g>
+      <!-- continuous line, starting where the 2nd mark in the ball begins -->
+      <line x1="640" y1="340" x2="1060" y2="340" stroke="#DFFD06" stroke-width="4"/>
+    </g>
+
+    <!-- Wordmark -->
+    <text id="logo-name" class="logo-name" x="600" y="450" text-anchor="middle"
+          font-size="92" letter-spacing="3" fill="#E9EDF3">Cypher Horizon</text>
+
+
+    <!-- Tagline -->
+    <text id="tagline" class="logo-tagline" x="600" y="520" text-anchor="middle"
+          font-size="26" fill="#B9C1CE">DECODE. TRANSITION. DELIVER.</text>
+  </g>
+</svg>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cypher Horizon — Interim & programmamanagement</title>
+<meta name="description" content="Cypher Horizon B.V. — interim- en programmamanagement op het snijvlak van IT, spoorinfrastructuur en bedrijfsvoering. Jouk ter Hofstede.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #09324C;
+    --navy-deep: #06202F;
+    --chartreuse: #DFFD06;
+    --paper: #F3F5F1;
+    --slate: #7C93A0;
+    --slate-line: rgba(9,50,76,0.14);
+    --line-on-navy: rgba(223,253,6,0.28);
+    --max: 1120px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--navy-deep);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .display{
+    font-family: 'Space Grotesk', Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  a{ color: inherit; }
+  img{ max-width: 100%; display:block; }
+
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  :focus-visible{
+    outline: 2px solid var(--chartreuse);
+    outline-offset: 3px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--navy);
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 14px 32px;
+    max-width: var(--max);
+    margin: 0 auto;
+  }
+  .wordmark{
+    display:block;
+    height: 30px;
+    width: auto;
+  }
+  nav.links{ display:flex; gap: 28px; }
+  nav.links a{
+    color: var(--paper);
+    text-decoration:none;
+    font-family:'Space Grotesk', Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    opacity: 0.85;
+  }
+  nav.links a:hover{ opacity: 1; }
+
+  /* ---------- HERO ---------- */
+  section.hero{
+    background: var(--navy);
+    color: var(--paper);
+    padding: 76px 0 92px;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: minmax(0,1fr) 300px;
+    gap: 56px;
+    align-items: start;
+  }
+  .hero-logo{
+    justify-self: end;
+    width: 260px;
+  }
+  .eyebrow-mark{
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .signal{
+    display:flex;
+    align-items:center;
+    gap: 4px;
+    height: 14px;
+  }
+  .signal i{
+    display:block;
+    width: 3px;
+    background: var(--chartreuse);
+    border-radius: 1px;
+  }
+  h1.headline{
+    font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+    line-height: 1.14;
+    max-width: 16ch;
+    color: var(--paper);
+  }
+  p.subhead{
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.2rem;
+    line-height: 1.55;
+    max-width: 46ch;
+    color: rgba(243,245,241,0.86);
+    margin-top: 22px;
+  }
+  .cta-row{
+    display:flex;
+    align-items:center;
+    gap: 24px;
+    margin-top: 34px;
+    flex-wrap: wrap;
+  }
+  .btn-primary{
+    display:inline-block;
+    background: var(--chartreuse);
+    color: var(--navy-deep);
+    font-family:'Space Grotesk', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 14px 26px;
+    border-radius: 2px;
+    text-decoration:none;
+  }
+  .btn-primary:hover{ background: #eaff4d; }
+  .link-quiet{
+    font-family:'Space Grotesk', Arial, sans-serif;
+    font-size: 0.95rem;
+    color: var(--paper);
+    text-decoration: underline;
+    text-decoration-color: rgba(243,245,241,0.4);
+    text-underline-offset: 4px;
+  }
+
+  /* ---------- POSITIONING ---------- */
+  section.positioning{
+    padding: 84px 0;
+  }
+  .pos-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .pos-grid h2{
+    font-size: 1.7rem;
+    max-width: 14ch;
+    margin-bottom: 18px;
+  }
+  .pos-grid p{
+    max-width: 50ch;
+    color: var(--navy-deep);
+  }
+  .domains{
+    display:flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .domain-row{
+    display:grid;
+    grid-template-columns: 140px 1fr;
+    align-items:center;
+    gap: 18px;
+  }
+  .domain-label{
+    font-family:'Space Grotesk', Arial, sans-serif;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--navy);
+    text-align: right;
+  }
+  .domain-bar{
+    height: 10px;
+    background: var(--navy);
+    border-radius: 1px;
+  }
+  .domain-row:nth-child(1) .domain-bar{ width: 62%; }
+  .domain-row:nth-child(2) .domain-bar{ width: 88%; }
+  .domain-row:nth-child(3) .domain-bar{ width: 40%; }
+
+  /* ---------- DIENSTEN ---------- */
+  section.diensten{
+    background: var(--navy);
+    color: var(--paper);
+    padding: 88px 0;
+  }
+  section.diensten h2{
+    color: var(--paper);
+    font-size: 1.7rem;
+    margin-bottom: 44px;
+    max-width: 20ch;
+  }
+  .service{
+    display:grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 32px;
+    padding: 30px 0;
+    border-top: 1px solid var(--line-on-navy);
+  }
+  .service:last-child{ border-bottom: 1px solid var(--line-on-navy); }
+  .service h3{
+    font-size: 1.15rem;
+    color: var(--chartreuse);
+    max-width: 20ch;
+  }
+  .service p{
+    margin:0;
+    color: rgba(243,245,241,0.86);
+    max-width: 52ch;
+  }
+
+  /* ---------- CONTACT ---------- */
+  section.contact{
+    padding: 90px 0 100px;
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 64px;
+  }
+  section.contact h2{
+    font-size: 1.7rem;
+    margin-bottom: 16px;
+    max-width: 16ch;
+  }
+  .contact-info p.lead{
+    color: var(--navy-deep);
+    max-width: 40ch;
+    margin-top: 0;
+    margin-bottom: 28px;
+  }
+  .info-list{
+    list-style:none;
+    margin:0; padding:0;
+    display:flex;
+    flex-direction:column;
+    gap: 16px;
+  }
+  .info-list li{
+    display:flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--slate-line);
+  }
+  .info-list .k{
+    font-family:'Space Grotesk', Arial, sans-serif;
+    font-size: 0.8rem;
+    color: var(--slate);
+  }
+  .info-list a, .info-list .v{
+    font-family:'Space Grotesk', Arial, sans-serif;
+    font-size: 1.05rem;
+    color: var(--navy-deep);
+    text-decoration: none;
+  }
+  .info-list a:hover{ color: var(--navy); text-decoration: underline; }
+
+  .linkedin-btn{
+    display:inline-flex;
+    align-items:center;
+    gap: 10px;
+    font-family:'Space Grotesk', Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--navy-deep);
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid var(--slate-line);
+    padding: 10px 16px;
+    border-radius: 2px;
+    width: fit-content;
+    margin-top: 2px;
+  }
+  .linkedin-btn:hover{
+    border-color: var(--navy);
+    background: var(--navy);
+    color: var(--paper);
+  }
+  .linkedin-btn svg{ flex-shrink:0; }
+
+  form.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap: 20px;
+  }
+  .field{
+    display:flex;
+    flex-direction:column;
+    gap: 6px;
+  }
+  .field label{
+    font-family:'Space Grotesk', Arial, sans-serif;
+    font-size: 0.82rem;
+    color: var(--navy);
+  }
+  .field input, .field textarea{
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1rem;
+    padding: 12px 14px;
+    border: 1px solid var(--slate-line);
+    background: #fff;
+    border-radius: 2px;
+    color: var(--navy-deep);
+  }
+  .field textarea{ resize: vertical; min-height: 120px; }
+  .field input:focus, .field textarea:focus{
+    outline: none;
+    border-color: var(--navy);
+  }
+  .form-foot{
+    display:flex;
+    align-items:center;
+    gap: 18px;
+    margin-top: 4px;
+  }
+  .btn-primary.form-submit{
+    border: none;
+    cursor: pointer;
+    background: var(--navy);
+    color: var(--paper);
+  }
+  .btn-primary.form-submit:hover{ background: var(--navy-deep); }
+  .form-note{
+    font-family:'Space Grotesk', Arial, sans-serif;
+    font-size: 0.82rem;
+    color: var(--slate);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background: var(--navy);
+    color: rgba(243,245,241,0.7);
+    padding: 40px 0;
+  }
+  .footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-tagline{
+    font-family:'Space Grotesk', Arial, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: rgba(223,253,6,0.85);
+  }
+  .footer-copy{
+    font-family:'Space Grotesk', Arial, sans-serif;
+    font-size: 0.8rem;
+  }
+  .colofon{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 32px;
+    margin-top: 22px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line-on-navy);
+  }
+  .colofon p{
+    margin:0;
+    font-family:'Space Grotesk', Arial, sans-serif;
+    font-size: 0.76rem;
+    color: rgba(243,245,241,0.55);
+    line-height: 1.7;
+  }
+  @media (max-width: 860px){
+    .colofon{ padding: 0 22px; margin-top: 22px; padding-top: 22px; }
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px){
+    .hero-grid{ grid-template-columns: 1fr; }
+    .hero-logo{ justify-self: start; width: 190px; order: -1; margin-bottom: 8px; }
+    .pos-grid{ grid-template-columns: 1fr; gap: 40px; }
+    .service{ grid-template-columns: 1fr; gap: 10px; }
+    .contact-grid{ grid-template-columns: 1fr; gap: 48px; }
+    nav.links{ gap: 18px; }
+    .wrap{ padding: 0 22px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top"><img class="wordmark" src="nav-logo.svg" alt="Cypher Horizon"></a>
+    <nav class="links">
+      <a href="#diensten">Diensten</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow-mark">
+        <span class="signal" aria-hidden="true">
+          <i style="height:14px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:6px"></i>
+        </span>
+      </div>
+      <h1 class="headline">Programma's die vastlopen tussen techniek, organisatie en politiek — daar begin ik.</h1>
+      <p class="subhead">Jouk ter Hofstede leidt interim- en programmaopdrachten op het snijvlak van IT, spoorinfrastructuur en bedrijfsvoering — van de landelijke uitrol van ERTMS tot digitale transformatie in complexe, bestuurlijk gevoelige omgevingen.</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn-primary">Plan een kennismaking</a>
+        <a href="#diensten" class="link-quiet">Bekijk de diensten</a>
+      </div>
+    </div>
+    <img class="hero-logo" src="hero-logo.svg" alt="Cypher Horizon logo">
+  </div>
+</section>
+
+<section class="positioning">
+  <div class="wrap pos-grid">
+    <div>
+      <h2>Drie werelden die zelden dezelfde persoon spreken</h2>
+      <p>IT'ers kennen zelden de spoorinfrastructuur. Sporexperts missen vaak de IT-achtergrond. Bedrijfskundigen ontberen doorgaans beide. Zestien jaar bij ProRail — van management consultant tot programmamanager landelijke uitrol ERTMS — hebben mij op het snijvlak van deze drie werelden gebracht. Cypher Horizon zet die combinatie in voor opdrachtgevers die verandering moeten leiden in technische, complexe omgevingen.</p>
+    </div>
+    <div class="domains" aria-hidden="false">
+      <div class="domain-row">
+        <span class="domain-label">IT & digitaal</span>
+        <span class="domain-bar"></span>
+      </div>
+      <div class="domain-row">
+        <span class="domain-label">Spoorinfrastructuur</span>
+        <span class="domain-bar"></span>
+      </div>
+      <div class="domain-row">
+        <span class="domain-label">Bedrijfsvoering</span>
+        <span class="domain-bar"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="diensten" id="diensten">
+  <div class="wrap">
+    <h2>Waar Cypher Horizon wordt ingezet</h2>
+
+    <div class="service">
+      <h3>Interim programmamanagement</h3>
+      <p>Sturing geven aan grootschalige, meerjarige programma's met meerdere stakeholders — van strategie en scope tot aansturing van de uitvoering.</p>
+    </div>
+    <div class="service">
+      <h3>ERTMS & spoorinfrastructuur</h3>
+      <p>Advies en leiderschap bij treinbeveiliging, treindetectie en de transitie naar Europese signaleringsstandaarden, gebaseerd op directe ervaring bij ProRail.</p>
+    </div>
+    <div class="service">
+      <h3>Digitale transformatie</h3>
+      <p>Bimodal IT, agile werkwijzen en de brug tussen bestaande systemen en nieuwe technologie, inclusief de eerste toepassingen van AI in bedrijfsprocessen.</p>
+    </div>
+    <div class="service">
+      <h3>Bestuurlijke samenwerking</h3>
+      <p>Verbinden van partijen als ProRail, NS en ministeries in politiek-bestuurlijk gevoelige trajecten, met oog voor ieders belang en het gezamenlijke doel.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <h2>Aan het woord</h2>
+      <p class="lead">Wilt u sparren over een opdracht, of gewoon kennismaken? Een kort gesprek is de snelste manier om te bepalen of Cypher Horizon de juiste partij is.</p>
+      <ul class="info-list">
+        <li>
+          <span class="k">E-mail</span>
+          <a href="mailto:jouk.terhofstede@cypherhorizon.nl">jouk.terhofstede@cypherhorizon.nl</a>
+        </li>
+        <li>
+          <span class="k">Telefoon</span>
+          <a href="tel:+31631665072">06 3166 5072</a>
+        </li>
+        <li>
+          <span class="k">LinkedIn</span>
+          <a class="linkedin-btn" href="https://www.linkedin.com/in/jouk-ter-hofstede-18517816/" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/>
+            </svg>
+            Bekijk LinkedIn-profiel
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+      <div class="field">
+        <label for="naam">Naam</label>
+        <input type="text" id="naam" name="naam" required>
+      </div>
+      <div class="field">
+        <label for="email">E-mailadres</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="field">
+        <label for="bericht">Bericht</label>
+        <textarea id="bericht" name="bericht" required></textarea>
+      </div>
+      <div class="form-foot">
+        <button type="submit" class="btn-primary form-submit">Verstuur bericht</button>
+        <span class="form-note">Opent uw e-mailprogramma met dit bericht klaar om te versturen.</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span class="footer-tagline">DECODE. TRANSITION. DELIVER.</span>
+    <span class="footer-copy">© 2026 Cypher Horizon B.V.</span>
+  </div>
+  <div class="colofon">
+    <p>Cypher Horizon B.V. — Laan van Chartroise 82, 3552 EX Utrecht — KvK: 42142868 — BTW: NL869908790B01</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var naam = document.getElementById('naam').value;
+    var email = document.getElementById('email').value;
+    var bericht = document.getElementById('bericht').value;
+    var subject = encodeURIComponent('Contact via cypherhorizon.nl — ' + naam);
+    var body = encodeURIComponent(bericht + '\n\n— ' + naam + ' (' + email + ')');
+    window.location.href = 'mailto:jouk.terhofstede@cypherhorizon.nl?subject=' + subject + '&body=' + body;
+  });
+</script>
+
+</body>
+</html>
