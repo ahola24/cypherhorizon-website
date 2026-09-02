@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="nl">
-<head>
+<html lang="nl"><head>
+    
+  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cypher Horizon — Interim & programmamanagement</title>
-<meta name="description" content="Cypher Horizon B.V. — interim- en programmamanagement op het snijvlak van IT, infrastructuur en bedrijfsvoering. Jouk ter Hofstede.">
+<title>Cypher Horizon — Interim &amp; programmamanagement</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;display=swap" rel="stylesheet">
 <style>
   :root{
     --navy: #09324C;
@@ -18,8 +18,8 @@
     --slate-line: rgba(9,50,76,0.14);
     --line-on-navy: rgba(223,253,6,0.28);
     --max: 1120px;
+    --col: 500px;
   }
-
   *{ box-sizing: border-box; }
   html{ scroll-behavior: smooth; }
   body{
@@ -35,400 +35,186 @@
     font-family: 'Space Grotesk', Arial, sans-serif;
     font-weight: 600;
     letter-spacing: -0.01em;
+    line-height: 1.2;
     margin: 0;
   }
   a{ color: inherit; }
   img{ max-width: 100%; display:block; }
-
-  .wrap{
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: 0 32px;
-  }
-
-  /* prefers-reduced-motion */
-  @media (prefers-reduced-motion: reduce){
-    *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
-  }
-
-  :focus-visible{
-    outline: 2px solid var(--chartreuse);
-    outline-offset: 3px;
-  }
-
-  /* ---------- NAV ---------- */
-  header.site-nav{
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    background: var(--navy);
-  }
-  .nav-inner{
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    padding: 18px 32px;
-    max-width: var(--max);
-    margin: 0 auto;
-  }
-  nav.links{ display:flex; gap: 28px; }
-  nav.links a{
-    color: var(--paper);
-    text-decoration:none;
-    font-family:'Space Grotesk', Arial, sans-serif;
-    font-size: 0.95rem;
-    font-weight: 500;
-    opacity: 0.85;
-  }
-  nav.links a:hover{ opacity: 1; }
+  .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+  :focus-visible{ outline: 2px solid var(--chartreuse); outline-offset: 3px; }
 
   /* ---------- HERO ---------- */
-  section.hero{
-    background: var(--navy);
-    color: var(--paper);
-    padding: 76px 0 92px;
+  section.hero{ background: var(--navy); color: var(--paper); padding: 76px 0 92px; }
+  .hero-row{ display:grid; grid-template-columns: var(--col) 1fr; gap:64px; align-items:center; }
+  .hero-content{ max-width: var(--col); }
+  .hero-photo-wrap{ max-width: 100%; margin: 0 auto; text-align:center; }
+  .hero-photo-circle{
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
   }
-  .hero-content{
-    max-width: 62ch;
+  .hero-photo-circle img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position: center 20%;
   }
-  .hero-logo{
-    height: 130px;
-    width: auto;
-    margin-bottom: 40px;
-  }
-  .eyebrow-mark{
-    display:flex;
-    align-items:center;
-    gap: 12px;
-    margin-bottom: 22px;
-  }
-  .signal{
-    display:flex;
-    align-items:center;
-    gap: 4px;
-    height: 14px;
-  }
-  .signal i{
-    display:block;
-    width: 3px;
-    background: var(--chartreuse);
-    border-radius: 1px;
-  }
-  h1.headline{
-    font-size: clamp(2.1rem, 4.4vw, 3.4rem);
-    line-height: 1.14;
-    max-width: 16ch;
-    color: var(--paper);
-  }
-  p.subhead{
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 1.2rem;
-    line-height: 1.55;
-    max-width: 46ch;
-    color: rgba(243,245,241,0.86);
-    margin-top: 22px;
-  }
-  .cta-row{
-    display:flex;
-    align-items:center;
-    gap: 24px;
-    margin-top: 34px;
-    flex-wrap: wrap;
-  }
-  .btn-primary{
-    display:inline-block;
-    background: var(--chartreuse);
-    color: var(--navy-deep);
+  .hero-photo-caption{
     font-family:'Space Grotesk', Arial, sans-serif;
+    font-size: 17px;
     font-weight: 600;
-    font-size: 1rem;
-    padding: 14px 26px;
-    border-radius: 2px;
-    text-decoration:none;
+    color: var(--chartreuse);
+    margin-top: 20px;
+    line-height: 1.2;
+    white-space: nowrap;
   }
-  .btn-primary:hover{ background: #eaff4d; }
-  .link-quiet{
+  .hero-photo-name{
     font-family:'Space Grotesk', Arial, sans-serif;
-    font-size: 0.95rem;
+    font-size: 1.3rem;
+    font-weight: 700;
     color: var(--paper);
-    text-decoration: underline;
-    text-decoration-color: rgba(243,245,241,0.4);
-    text-underline-offset: 4px;
+    margin-top: 18px;
+    line-height: 1.2;
   }
+  .hero-photo-role{
+    font-family:'Space Grotesk', Arial, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(243,245,241,0.55);
+    margin-top: 6px;
+  }
+  .hero-logo-wrap{ margin-bottom: 32px; }
+  .hero-logo{ height: 170px; width: auto; margin: 0 auto; }
+  .hero-divider{ width: calc(100% + 64px); margin: 0 -32px 40px; height:0; border-top: 1px solid var(--line-on-navy); }
+  .eyebrow-mark{ display:flex; align-items:center; gap:12px; margin-bottom:22px; }
+  .signal{ display:flex; align-items:center; gap:4px; height:14px; }
+  .signal i{ display:block; width:3px; background: var(--chartreuse); border-radius:1px; }
+  h1.headline{ font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-height:1.14; max-width:16ch; color: var(--paper); }
+  p.subhead{ font-family:'Source Serif 4', Georgia, serif; font-size:1.2rem; line-height:1.55; width:100%; color:rgba(243,245,241,0.86); margin-top:22px; }
+  p.subhead-punch{ font-family:'Space Grotesk', Arial, sans-serif; font-size:1.2rem; font-weight:600; width:100%; line-height:1.2; color: var(--chartreuse); margin-top:14px; }
+  p.punch-light{ font-family:'Space Grotesk', Arial, sans-serif; font-size:1.15rem; font-weight:600; width:100%; color: var(--navy); }
+  .cta-row{ display:flex; align-items:center; gap:24px; margin-top:34px; flex-wrap:wrap; }
+  .btn-primary{ display:inline-block; background: var(--chartreuse); color: var(--navy-deep); font-family:'Space Grotesk', Arial, sans-serif; font-weight:600; font-size:1rem; padding:14px 26px; border-radius:2px; text-decoration:none; }
+  .link-quiet{ font-family:'Space Grotesk', Arial, sans-serif; font-size:0.95rem; color: var(--paper); text-decoration:underline; text-decoration-color:rgba(243,245,241,0.4); text-underline-offset:4px; }
 
   /* ---------- POSITIONING ---------- */
-  section.positioning{
-    padding: 84px 0;
+  section.positioning{ padding: 84px 0; }
+  .pos-grid{ display:grid; grid-template-columns: var(--col) 1fr; gap:64px; align-items:center; }
+  .pos-grid h2{ font-size:1.7rem; max-width:14ch; margin-bottom:18px; }
+  .pos-grid p{ width:100%; color: var(--navy-deep); }
+  .domains{ display:flex; flex-direction:column; gap:16px; }
+  .domain-network{
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
   }
-  .pos-grid{
-    display:grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 64px;
-    align-items: center;
+  .domain-network svg{ position:absolute; inset:0; width:100%; height:100%; overflow:visible; }
+  .domain-hub{
+    position:absolute; left:50%; top:50%;
+    transform: translate(-50%,-50%);
+    width: 40px; height:40px;
+    background: var(--chartreuse);
+    border-radius: 50%;
+    box-shadow: 0 0 0 14px rgba(223,253,6,0.25);
   }
-  .pos-grid h2{
-    font-size: 1.7rem;
-    max-width: 14ch;
-    margin-bottom: 18px;
-  }
-  .pos-grid p{
-    max-width: 50ch;
-    color: var(--navy-deep);
-  }
-  .domains{
-    display:flex;
-    flex-direction: column;
-    gap: 22px;
-  }
-  .domain-row{
-    display:grid;
-    grid-template-columns: 140px 1fr;
-    align-items:center;
-    gap: 18px;
-  }
-  .domain-label{
+  .domain-node{
+    position:absolute;
+    transform: translate(-50%,-50%);
     font-family:'Space Grotesk', Arial, sans-serif;
-    font-size: 0.92rem;
+    font-size: 0.98rem;
     font-weight: 500;
     color: var(--navy);
-    text-align: right;
+    background: var(--paper);
+    padding: 6px 12px;
+    border-radius: 2px;
+    white-space: nowrap;
+    text-align:center;
   }
-  .domain-bar{
-    height: 10px;
-    background: var(--navy);
-    border-radius: 1px;
-  }
-  .domain-row:nth-child(1) .domain-bar{ width: 62%; }
-  .domain-row:nth-child(2) .domain-bar{ width: 88%; }
-  .domain-row:nth-child(3) .domain-bar{ width: 40%; }
+  .domain-label{ font-family:'Space Grotesk', Arial, sans-serif; font-size:1.05rem; font-weight:500; color: var(--navy); display:inline-block; }
 
   /* ---------- DIENSTEN ---------- */
-  section.diensten{
-    background: var(--navy);
-    color: var(--paper);
-    padding: 88px 0;
-  }
-  section.diensten h2{
-    color: var(--paper);
-    font-size: 1.7rem;
-    margin-bottom: 44px;
-    max-width: 20ch;
-  }
-  .service{
-    display:grid;
-    grid-template-columns: 1fr 1.6fr;
-    gap: 32px;
-    padding: 30px 0;
-    border-top: 1px solid var(--line-on-navy);
-  }
-  .service:last-child{ border-bottom: 1px solid var(--line-on-navy); }
-  .service h3{
-    font-size: 1.15rem;
-    color: var(--chartreuse);
-    max-width: 20ch;
-  }
-  .service p{
-    margin:0;
-    color: rgba(243,245,241,0.86);
-    max-width: 52ch;
-  }
+  section.diensten{ background: var(--navy); color: var(--paper); padding: 88px 0; }
+  section.diensten h2{ color: var(--paper); font-size:1.7rem; margin-bottom:44px; max-width:20ch; }
+  .service{ display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:12px 32px; padding:24px 0; border-top:1px solid var(--line-on-navy); }
+  .service:last-child{ border-bottom:1px solid var(--line-on-navy); }
+  .service h3{ font-size:1.15rem; color: var(--chartreuse); margin:0; }
+  .service-tags{ font-family:'Space Grotesk', Arial, sans-serif; font-size:0.85rem; color:rgba(243,245,241,0.55); letter-spacing:0.02em; }
 
   /* ---------- CONTACT ---------- */
-  section.contact{
-    padding: 90px 0 100px;
-  }
-  .contact-grid{
-    display:grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 64px;
-  }
-  section.contact h2{
-    font-size: 1.7rem;
-    margin-bottom: 16px;
-    max-width: 16ch;
-  }
-  .contact-info p.lead{
-    color: var(--navy-deep);
-    max-width: 40ch;
-    margin-top: 0;
-    margin-bottom: 28px;
-  }
-  .info-list{
-    list-style:none;
-    margin:0; padding:0;
-    display:flex;
-    flex-direction:column;
-    gap: 16px;
-  }
-  .info-list li{
-    display:flex;
-    flex-direction: column;
-    gap: 2px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--slate-line);
-  }
-  .info-list .k{
-    font-family:'Space Grotesk', Arial, sans-serif;
-    font-size: 0.8rem;
-    color: var(--slate);
-  }
-  .info-list a, .info-list .v{
-    font-family:'Space Grotesk', Arial, sans-serif;
-    font-size: 1.05rem;
-    color: var(--navy-deep);
-    text-decoration: none;
-  }
-  .info-list a:hover{ color: var(--navy); text-decoration: underline; }
-
-  .linkedin-btn{
-    display:inline-flex;
-    align-items:center;
-    gap: 10px;
-    font-family:'Space Grotesk', Arial, sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--navy-deep);
-    text-decoration: none;
-    background: #fff;
-    border: 1px solid var(--slate-line);
-    padding: 10px 16px;
-    border-radius: 2px;
-    width: fit-content;
-    margin-top: 2px;
-  }
-  .linkedin-btn:hover{
-    border-color: var(--navy);
-    background: var(--navy);
-    color: var(--paper);
-  }
+  section.contact{ padding: 90px 0 100px; }
+  .contact-grid{ display:grid; grid-template-columns: var(--col) 1fr; gap:64px; }
+  section.contact h2{ font-size:1.7rem; margin-bottom:16px; max-width:16ch; }
+  .contact-info p.lead{ color: var(--navy-deep); width:100%; margin-top:0; margin-bottom:28px; }
+  .info-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:16px; }
+  .info-list li{ display:flex; flex-direction:column; gap:2px; padding-bottom:14px; border-bottom:1px solid var(--slate-line); }
+  .info-list .k{ font-family:'Space Grotesk', Arial, sans-serif; font-size:0.8rem; color: var(--slate); }
+  .info-list a, .info-list .v{ font-family:'Space Grotesk', Arial, sans-serif; font-size:1.05rem; color: var(--navy-deep); text-decoration:none; }
+  .linkedin-btn{ display:inline-flex; align-items:center; gap:10px; font-family:'Space Grotesk', Arial, sans-serif; font-size:0.95rem; font-weight:600; color: var(--navy-deep); text-decoration:none; background:#fff; border:1px solid var(--slate-line); padding:10px 16px; border-radius:2px; width:fit-content; margin-top:2px; }
   .linkedin-btn svg{ flex-shrink:0; }
-
-  form.contact-form{
-    display:flex;
-    flex-direction:column;
-    gap: 20px;
-  }
-  .field{
-    display:flex;
-    flex-direction:column;
-    gap: 6px;
-  }
-  .field label{
-    font-family:'Space Grotesk', Arial, sans-serif;
-    font-size: 0.82rem;
-    color: var(--navy);
-  }
-  .field input, .field textarea{
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 1rem;
-    padding: 12px 14px;
-    border: 1px solid var(--slate-line);
-    background: #fff;
-    border-radius: 2px;
-    color: var(--navy-deep);
-  }
-  .field textarea{ resize: vertical; min-height: 120px; }
-  .field input:focus, .field textarea:focus{
-    outline: none;
-    border-color: var(--navy);
-  }
-  .form-foot{
-    display:flex;
-    align-items:center;
-    gap: 18px;
-    margin-top: 4px;
-  }
-  .btn-primary.form-submit{
-    border: none;
-    cursor: pointer;
-    background: var(--navy);
-    color: var(--paper);
-  }
-  .btn-primary.form-submit:hover{ background: var(--navy-deep); }
-  .form-note{
-    font-family:'Space Grotesk', Arial, sans-serif;
-    font-size: 0.82rem;
-    color: var(--slate);
-  }
+  form.contact-form{ display:flex; flex-direction:column; gap:20px; }
+  .field{ display:flex; flex-direction:column; gap:6px; }
+  .field label{ font-family:'Space Grotesk', Arial, sans-serif; font-size:0.82rem; color: var(--navy); }
+  .field input, .field textarea{ font-family:'Source Serif 4', Georgia, serif; font-size:1rem; padding:12px 14px; border:1px solid var(--slate-line); background:#fff; border-radius:2px; color: var(--navy-deep); }
+  .field textarea{ resize:vertical; min-height:120px; }
+  .form-foot{ display:flex; align-items:center; gap:18px; margin-top:4px; }
+  .btn-primary.form-submit{ border:none; cursor:pointer; background: var(--navy); color: var(--paper); }
+  .form-note{ font-family:'Space Grotesk', Arial, sans-serif; font-size:0.82rem; color: var(--slate); }
 
   /* ---------- FOOTER ---------- */
-  footer{
-    background: var(--navy);
-    color: rgba(243,245,241,0.7);
-    padding: 40px 0;
-  }
-  .footer-inner{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  .footer-tagline{
-    font-family:'Space Grotesk', Arial, sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 0.04em;
-    color: rgba(223,253,6,0.85);
-  }
-  .footer-copy{
-    font-family:'Space Grotesk', Arial, sans-serif;
-    font-size: 0.8rem;
-  }
-  .colofon{
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: 0 32px;
-    margin-top: 22px;
-    padding-top: 22px;
-    border-top: 1px solid var(--line-on-navy);
-  }
-  .colofon p{
-    margin:0;
-    font-family:'Space Grotesk', Arial, sans-serif;
-    font-size: 0.76rem;
-    color: rgba(243,245,241,0.55);
-    line-height: 1.7;
-  }
-  @media (max-width: 860px){
-    .colofon{ padding: 0 22px; margin-top: 22px; padding-top: 22px; }
-  }
+  footer{ background: var(--navy); color: rgba(243,245,241,0.7); padding: 40px 0; }
+  .footer-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  .footer-tagline{ font-family:'Space Grotesk', Arial, sans-serif; font-size:0.8rem; letter-spacing:0.04em; color:rgba(223,253,6,0.85); }
+  .footer-copy{ font-family:'Space Grotesk', Arial, sans-serif; font-size:0.8rem; }
+  .colofon{ max-width: var(--max); margin:0 auto; padding:0 32px; margin-top:22px; padding-top:22px; border-top:1px solid var(--line-on-navy); }
+  .colofon p{ margin:0; font-family:'Space Grotesk', Arial, sans-serif; font-size:0.76rem; color:rgba(243,245,241,0.55); line-height:1.7; }
 
-  /* ---------- RESPONSIVE ---------- */
   @media (max-width: 860px){
-    .pos-grid{ grid-template-columns: 1fr; gap: 40px; }
-    .service{ grid-template-columns: 1fr; gap: 10px; }
-    .contact-grid{ grid-template-columns: 1fr; gap: 48px; }
-    nav.links{ gap: 18px; }
+    .pos-grid{ grid-template-columns: 1fr; gap:40px; }
+    .hero-row{ grid-template-columns: 1fr; gap:40px; }
+    .hero-photo-wrap{ max-width: 320px; }
+    .service{ grid-template-columns: 1fr; gap:10px; }
+    .contact-grid{ grid-template-columns: 1fr; gap:48px; }
     .wrap{ padding: 0 22px; }
+    .hero-divider{ width: calc(100% + 44px); margin: 0 -22px 40px; }
+    .colofon{ padding: 0 22px; }
+    #editor-toolbar{ flex-direction:column; align-items:flex-start; }
   }
 </style>
 </head>
-<body>
+<body id="artifacts-component-root-html">
 
-<header class="site-nav">
-  <div class="nav-inner">
-    <nav class="links">
-      <a href="#diensten">Diensten</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+
 
 <section class="hero" id="top">
   <div class="wrap hero-grid">
+    <div class="hero-logo-wrap"><img class="hero-logo" src="hero-logo.svg" alt="Cypher Horizon" style="height:170px;width:auto;margin:0 auto;"></div>
+    <div class="hero-divider"></div>
+    <div class="hero-row">
     <div class="hero-content">
-      <img class="hero-logo" src="hero-logo.svg" alt="Cypher Horizon">
       <div class="eyebrow-mark">
         <span class="signal" aria-hidden="true">
           <i style="height:14px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:6px"></i>
         </span>
       </div>
-      <h1 class="headline">Programma's die vastlopen tussen techniek, organisatie en politiek — daar begin ik.</h1>
-      <p class="subhead">Jouk ter Hofstede leidt interim- en programmaopdrachten op het snijvlak van IT, infrastructuur en bedrijfsvoering — van de landelijke uitrol van ERTMS tot digitale transformatie in complexe, bestuurlijk gevoelige omgevingen.</p>
+      <h1 class="headline">Opgave vastgelopen,<br>is een nieuw perspectief nodig?</h1>
+      <p class="subhead">Cypher Horizon ontwart de knopen en loodst de organisatie door ingewikkelde transitietrajecten.<br>Met een heldere blik en pragmatische aanpak op het snijvlak van ICT, infrastructuur en bedrijfsvoering in complexe bestuurlijke omgevingen met grote verandercomponenten.</p>
+      <p class="subhead-punch">Het gedaan krijgen.</p>
       <div class="cta-row">
         <a href="#contact" class="btn-primary">Plan een kennismaking</a>
         <a href="#diensten" class="link-quiet">Bekijk de diensten</a>
       </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-circle"><img src="jouk-foto.jpg" alt="Jouk ter Hofstede"></div>
+      <p class="hero-photo-caption">Ik ga liever op ontdekkingstocht dan dat ik op de winkel pas.</p>
+      <p class="hero-photo-name">Jouk ter Hofstede</p>
+      <p class="hero-photo-role">Oprichter Cypher Horizon</p>
+    </div>
     </div>
   </div>
 </section>
@@ -441,21 +227,30 @@
           <i style="height:14px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:6px"></i>
         </span>
       </div>
-      <h2>Drie werelden die zelden dezelfde persoon spreken</h2>
-      <p>IT'ers kennen zelden de fysieke infrastructuur eronder — spoor, energie, wegen. Infrastructuurspecialisten missen vaak de IT-achtergrond. Bedrijfskundigen ontberen doorgaans beide. Zestien jaar bij ProRail — van management consultant tot programmamanager landelijke uitrol ERTMS — hebben mij op het snijvlak van deze drie werelden gebracht, met het spoor als diepste vakgebied en principes die net zo goed gelden in energie- en weginfrastructuur. Cypher Horizon zet die combinatie in voor opdrachtgevers die verandering moeten leiden in technische, complexe omgevingen.</p>
+      <h2>Werelden die zelden dezelfde taal spreken</h2>
+      <p>Cruciaal om de problemen van nu op te lossen is begrip en erkenning van ieders vakgebied, expertise, belang en de verbinding daartussen leggen.</p>
+      <p>Op het snijvlak van verschillende werelden zet Cypher Horizon zich in voor opdrachtgevers bij het vormen en realiseren van een nieuwe koers.</p>
+      <p class="punch-light">Het draait om nieuwsgierigheid.</p>
+      <p class="punch-light">Op zoek gaan naar wat nog niet is uitgedacht.</p>
+      <p class="punch-light">Ruimte om te bewegen.</p>
     </div>
-    <div class="domains" aria-hidden="false">
-      <div class="domain-row">
-        <span class="domain-label">IT & digitaal</span>
-        <span class="domain-bar"></span>
-      </div>
-      <div class="domain-row">
-        <span class="domain-label">Infrastructuur</span>
-        <span class="domain-bar"></span>
-      </div>
-      <div class="domain-row">
-        <span class="domain-label">Bedrijfsvoering</span>
-        <span class="domain-bar"></span>
+    <div class="domains">
+      <div class="domain-network">
+        <svg viewBox="0 0 460 460" aria-hidden="true">
+          <line x1="230" y1="230" x2="230" y2="55" stroke="rgba(9,50,76,0.25)" stroke-width="1" stroke-dasharray="3 4"></line>
+          <line x1="230" y1="230" x2="381.6" y2="142.5" stroke="rgba(9,50,76,0.25)" stroke-width="1" stroke-dasharray="3 4"></line>
+          <line x1="230" y1="230" x2="381.6" y2="317.5" stroke="rgba(9,50,76,0.25)" stroke-width="1" stroke-dasharray="3 4"></line>
+          <line x1="230" y1="230" x2="230" y2="405" stroke="rgba(9,50,76,0.25)" stroke-width="1" stroke-dasharray="3 4"></line>
+          <line x1="230" y1="230" x2="78.4" y2="317.5" stroke="rgba(9,50,76,0.25)" stroke-width="1" stroke-dasharray="3 4"></line>
+          <line x1="230" y1="230" x2="78.4" y2="142.5" stroke="rgba(9,50,76,0.25)" stroke-width="1" stroke-dasharray="3 4"></line>
+        </svg>
+        <div class="domain-hub" title="Cypher Horizon"></div>
+        <span class="domain-node" style="left:50%; top:11.96%;">ICT</span>
+        <span class="domain-node" style="left:82.95%; top:30.98%;">Digitalisering</span>
+        <span class="domain-node" style="left:82.95%; top:69.02%;">Infrastructuur</span>
+        <span class="domain-node" style="left:50%; top:88.04%;">Verandermanagement</span>
+        <span class="domain-node" style="left:17.05%; top:69.02%;">Bedrijfsvoering</span>
+        <span class="domain-node" style="left:17.05%; top:30.98%;">Innovatie</span>
       </div>
     </div>
   </div>
@@ -471,20 +266,16 @@
     <h2>Waar Cypher Horizon wordt ingezet</h2>
 
     <div class="service">
-      <h3>Interim programmamanagement</h3>
-      <p>Sturing geven aan grootschalige, meerjarige programma's met meerdere stakeholders — van strategie en scope tot aansturing van de uitvoering.</p>
+      <h3>Programmamanagement</h3>
+      <span class="service-tags">Strategie · Scope · Uitvoering</span>
     </div>
     <div class="service">
-      <h3>ERTMS & spoorinfrastructuur</h3>
-      <p>Advies en leiderschap bij treinbeveiliging, treindetectie en de transitie naar Europese signaleringsstandaarden, gebaseerd op directe ervaring bij ProRail.</p>
-    </div>
-    <div class="service">
-      <h3>Digitale transformatie</h3>
-      <p>Bimodal IT, agile werkwijzen en de brug tussen bestaande systemen en nieuwe technologie, inclusief de eerste toepassingen van AI in bedrijfsprocessen.</p>
+      <h3>Verandermanagement</h3>
+      <span class="service-tags">Visievorming · Beweging · Innovatief</span>
     </div>
     <div class="service">
       <h3>Bestuurlijke samenwerking</h3>
-      <p>Verbinden van partijen als ProRail, NS en ministeries in politiek-bestuurlijk gevoelige trajecten, met oog voor ieders belang en het gezamenlijke doel.</p>
+      <span class="service-tags">Allianties · Politiek-bestuurlijk · Draagvlak</span>
     </div>
   </div>
 </section>
@@ -497,8 +288,8 @@
           <i style="height:14px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:6px"></i>
         </span>
       </div>
-      <h2>Aan het woord</h2>
-      <p class="lead">Wilt u sparren over een opdracht, of gewoon kennismaken? Een kort gesprek is de snelste manier om te bepalen of Cypher Horizon de juiste partij is.</p>
+      <h2>Contact</h2>
+      <p class="lead">Een kort gesprek is de snelste manier om te bepalen of Cypher Horizon de juiste partij is.</p>
       <ul class="info-list">
         <li>
           <span class="k">E-mail</span>
@@ -509,29 +300,29 @@
           <a href="tel:+31631665072">06 3166 5072</a>
         </li>
         <li>
-          <span class="k">LinkedIn</span>
           <a class="linkedin-btn" href="https://www.linkedin.com/in/jouk-ter-hofstede-18517816/" target="_blank" rel="noopener">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/>
+              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"></path>
             </svg>
-            Bekijk LinkedIn-profiel
+            LinkedIn
           </a>
         </li>
       </ul>
     </div>
 
     <form class="contact-form" id="contactForm">
+      <div aria-hidden="true" style="height:16px"></div>
       <div class="field">
         <label for="naam">Naam</label>
-        <input type="text" id="naam" name="naam" required>
+        <input type="text" id="naam" name="naam" required="">
       </div>
       <div class="field">
         <label for="email">E-mailadres</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required="">
       </div>
       <div class="field">
         <label for="bericht">Bericht</label>
-        <textarea id="bericht" name="bericht" required></textarea>
+        <textarea id="bericht" name="bericht" required=""></textarea>
       </div>
       <div class="form-foot">
         <button type="submit" class="btn-primary form-submit">Verstuur bericht</button>
@@ -551,17 +342,8 @@
   </div>
 </footer>
 
-<script>
-  document.getElementById('contactForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    var naam = document.getElementById('naam').value;
-    var email = document.getElementById('email').value;
-    var bericht = document.getElementById('bericht').value;
-    var subject = encodeURIComponent('Contact via cypherhorizon.nl — ' + naam);
-    var body = encodeURIComponent(bericht + '\n\n— ' + naam + ' (' + email + ')');
-    window.location.href = 'mailto:jouk.terhofstede@cypherhorizon.nl?subject=' + subject + '&body=' + body;
-  });
-</script>
 
-</body>
-</html>
+
+
+
+<script>document.getElementById('contactForm').addEventListener('submit', function(e){e.preventDefault();var naam=document.getElementById('naam').value;var email=document.getElementById('email').value;var bericht=document.getElementById('bericht').value;var subject=encodeURIComponent('Contact via cypherhorizon.nl — '+naam);var body=encodeURIComponent(bericht+'\n\n— '+naam+' ('+email+')');window.location.href='mailto:jouk.terhofstede@cypherhorizon.nl?subject='+subject+'&body='+body;});</script></body></html>
