@@ -54,7 +54,6 @@
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
-    border: 4px solid var(--chartreuse);
   }
   .hero-photo-circle img{
     width:100%;
@@ -67,7 +66,7 @@
     font-size: 17px;
     font-weight: 600;
     color: var(--chartreuse);
-    margin-top: 8px;
+    margin-top: 4px;
     line-height: 1.2;
     white-space: nowrap;
   }
@@ -76,7 +75,7 @@
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--paper);
-    margin-top: 18px;
+    margin-top: -8px;
     line-height: 1.2;
   }
   .hero-photo-role{
@@ -86,14 +85,36 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: rgba(243,245,241,0.55);
-    margin-top: 6px;
+    margin-top: -13px;
   }
+  .drag-row{ position:relative; display:flex; align-items:center; justify-content:center; }
+  .drag-handle{
+    position:absolute;
+    left: 50%;
+    transform: translateX(-140px);
+    width: 26px;
+    height: 26px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: rgba(223,253,6,0.15);
+    border: 1px solid rgba(223,253,6,0.5);
+    border-radius: 4px;
+    color: var(--chartreuse);
+    font-size: 14px;
+    cursor: ns-resize;
+    user-select: none;
+    z-index: 5;
+  }
+  .drag-handle:active{ background: rgba(223,253,6,0.35); }
+  .drag-row.dragging{ outline: 1px dashed var(--chartreuse); }
   .hero-photo-bridge{
     font-family:'Source Serif 4', Georgia, serif;
     font-size: 1rem;
     line-height: 1.5;
     color: rgba(243,245,241,0.7);
     margin-top: 16px;
+    text-align: left;
   }
   .hero-logo-wrap{ margin-bottom: 8px; }
   .hero-logo{ height: 170px; width: auto; margin: 0 auto; }
@@ -212,7 +233,8 @@
         </span>
       </div>
       <h1 class="headline">Vooruitgang wacht niet.<br>Wat doe jij?</h1>
-      <p class="subhead">Cypher Horizon richt zich op de toekomst: het oplossen van vraagstukken die zijn vastgelopen, of waarbij de vraag simpelweg is: hoe doen we dit? Vraagstukken die om een ander perspectief vragen — en om een andere manier van samenwerken dan je gewend bent.</p>
+      <p class="subhead">Cypher Horizon richt zich op de toekomst: het oplossen van vraagstukken die zijn vastgelopen of waarbij de vraag simpelweg is: hoe doen we dit?</p>
+      <p class="subhead">Vraagstukken die om een ander perspectief vragen én om een andere manier van samenwerken dan je gewend bent.</p>
       <p class="subhead-punch">Onorthodox. Non-conformistisch.</p>
       <div class="cta-row">
         <a href="#contact" class="btn-primary">Plan een kennismaking</a>
@@ -224,7 +246,7 @@
       <p class="hero-photo-caption">Ik ga liever op ontdekkingstocht dan dat ik op de winkel pas.</p>
       <p class="hero-photo-name">Jouk ter Hofstede</p>
       <p class="hero-photo-role">Oprichter Cypher Horizon</p>
-      <p class="hero-photo-bridge">Wat mij betreft vraagt het oplossen van complexe vraagstukken om lef en verbinding. Op zoek gaan naar wat nog niet is uitgedacht.</p>
+      <p class="hero-photo-bridge">Wat mij betreft vraagt het oplossen van complexe vraagstukken om lef en verbinding. Oplossingen zijn vaak niet vanzelfsprekend en kunnen schuren. Dat vraagt aandacht voor betrokkenen om het voor elkaar te krijgen.</p>
     </div>
     </div>
   </div>
@@ -353,6 +375,8 @@
     <p>Cypher Horizon B.V. — Laan van Chartroise 82, 3552 EX Utrecht — KvK: 42142868 — BTW: NL869908790B01</p>
   </div>
 </footer>
+
+
 
 
 
