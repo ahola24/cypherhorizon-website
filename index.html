@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl"><head>
     
-  
+  <style id="claude-scrollbar">@layer claude-scrollbar{*{scrollbar-width:thin}html{scrollbar-color:rgb(128 128 128 / 50%) transparent}}</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Cypher Horizon pakt vastgelopen vraagstukken aan met een onorthodoxe, non-conformistische aanpak — programmamanagement, verandermanagement, coalitievorming en kwartiermaker.">
@@ -43,6 +43,38 @@
   img{ max-width: 100%; display:block; }
   .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 32px; }
   :focus-visible{ outline: 2px solid var(--chartreuse); outline-offset: 3px; }
+
+  /* ---------- EDITOR CHROME (not part of the page itself) ---------- */
+  #editor-toolbar{
+    position: sticky; top:0; z-index:50;
+    background:#1c1c1c; color:#fff;
+    padding: 12px 20px;
+    font-family: Arial, sans-serif;
+    display:flex; align-items:center; justify-content:space-between;
+    gap: 16px; flex-wrap:wrap;
+  }
+  #editor-toolbar .msg{ font-size: 13px; color:#ccc; max-width:640px; }
+  #editor-toolbar .msg b{ color:#fff; }
+  #editor-toolbar button{
+    background: var(--chartreuse); color:#111; border:none;
+    font-family: Arial, sans-serif; font-weight:700; font-size:14px;
+    padding: 10px 18px; border-radius:3px; cursor:pointer; white-space:nowrap;
+  }
+  #editor-toolbar button:hover{ background:#eaff4d; }
+  #editor-toolbar .saved-note{ font-size:12px; color: var(--chartreuse); display:none; }
+  [contenteditable="true"]{
+    outline: 1px dashed rgba(9,50,76,0.35);
+    outline-offset: 3px;
+    cursor: text;
+    transition: outline-color 0.15s;
+  }
+  section.hero [contenteditable="true"],
+  section.diensten [contenteditable="true"],
+  footer [contenteditable="true"]{
+    outline: 1px dashed rgba(223,253,6,0.45);
+  }
+  [contenteditable="true"]:hover{ outline-style: solid; }
+  [contenteditable="true"]:focus{ outline-style: solid; outline-color: var(--chartreuse); }
 
   /* ---------- HERO ---------- */
   section.hero{ background: var(--navy); color: var(--paper); padding: 20px 0 64px; }
@@ -120,8 +152,8 @@
     margin-top: 16px;
     text-align: center;
   }
-  .hero-logo-wrap{ margin-bottom: 8px; }
-  .hero-logo{ height: 170px; width: auto; margin: 0 auto; }
+  .hero-logo-wrap{ margin-bottom: 8px; text-align:center; }
+  .hero-logo-wrap svg{ height:170px; width:auto; margin:0 auto; display:block; }
   .hero-divider{ width: calc(100% + 64px); margin: 0 -32px 40px; height:0; border-top: 1px solid var(--line-on-navy); }
   .eyebrow-mark{ display:flex; align-items:center; gap:12px; margin-bottom:22px; }
   .signal{ display:flex; align-items:center; gap:4px; height:14px; }
@@ -174,8 +206,10 @@
   section.diensten h2{ color: var(--paper); font-size:1.7rem; margin-bottom:18px; }
   .diensten-intro{ font-family:'Source Serif 4', Georgia, serif; font-size:1.1rem; line-height:1.5; color:rgba(243,245,241,0.86); max-width:60ch; margin-bottom:36px; }
   .diensten-case{ margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--line-on-navy); }
+  .diensten-case p.case-label{ font-family:'Space Grotesk', Arial, sans-serif; font-size:0.75rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color: rgba(223,253,6,0.7); margin-bottom:10px; }
   .diensten-case p.case-lead{ font-family:'Space Grotesk', Arial, sans-serif; font-size:1.15rem; font-weight:600; color: var(--chartreuse); margin-bottom:20px; line-height:1.4; }
   .diensten-case p{ font-family:'Source Serif 4', Georgia, serif; font-size:1.05rem; line-height:1.6; color:rgba(243,245,241,0.86); margin-bottom:18px; }
+  .diensten-case p.case-footnote{ font-size:0.85rem; color:rgba(243,245,241,0.55); margin-top:8px; }
   .service{ display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:12px 32px; padding:24px 0; border-top:1px solid var(--line-on-navy); }
   .service:last-child{ border-bottom:1px solid var(--line-on-navy); }
   .service h3{ font-size:1.15rem; color: var(--chartreuse); margin:0; }
@@ -251,8 +285,8 @@
     <div class="hero-photo-wrap">
       <div class="hero-photo-circle"><img src="jouk-foto.jpg" alt="Jouk ter Hofstede"></div>
       <p class="hero-photo-caption">Samen op ontdekkingstocht naar de stip op de horizon.</p>
-      <p class="hero-photo-name">Jouk ter Hofstede</p>
-      <p class="hero-photo-role">Oprichter Cypher Horizon</p>
+      <p class="hero-photo-name" style="margin-top: -9px;">Jouk ter Hofstede</p>
+      <p class="hero-photo-role" style="margin-top: -17px;">Oprichter Cypher Horizon</p>
       <p class="hero-photo-bridge">Oplossingen zijn vaak niet vanzelfsprekend en kunnen schuren. Dit vraagt om lef, verbinding en gezamenlijke uitvoeringskracht.</p>
     </div>
     </div>
@@ -347,11 +381,13 @@
       <span class="service-tags">Opzetten · Momentum · Overdragen</span>
     </div>
     <div class="diensten-case">
+      <p class="case-label">Voorbeeld uit de praktijk</p>
       <p class="case-lead">In mijn rol als Programmamanager landelijke uitrol ERTMS kwamen deze 4 rollen samen</p>
-      <p>Als programmamanager begon ik aan een onbekend vraagstuk, nog zonder team: de introductie van ERTMS in Nederland verliep niet zoals nodig — niet in geld, tijd, resultaat of doel. Ik vormde een team van experts, zette daarmee een strategie neer, en bracht tegelijkertijd de sectorpartijen — ProRail, vervoerders, het ministerie van Infrastructuur en Waterstaat — samen tot een gezamenlijke koers.</p>
+      <p>Als programmamanager begon ik aan een onbekend vraagstuk, nog zonder team: de introductie van ERTMS<sup>*</sup> in Nederland verliep niet zoals bedacht — niet in geld, tijd, resultaat of doel. Ik vormde een team van experts, zette daarmee een strategie neer, en bracht tegelijkertijd de sectorpartijen — ProRail, vervoerders, het ministerie van Infrastructuur en Waterstaat — samen tot een gezamenlijke koers.</p>
       <p>Parallel hieraan liep een interne verandering: de programmasturing moest opgaan in de nieuw in te richten hoofdprocessen van de organisatie. Een nieuwe koers, een nieuwe interne structuur, én een sectorbrede samenwerking die nog niet bestond — tegelijkertijd. Een verandering, in een verandering, in een verandering. De dubbele rubiks kubus noem ik dat.</p>
       <p>De strategie staat, inmiddels zijn tientallen collega's naast het kernteam betrokken. De koers is behandeld en onderschreven in de Tweede Kamer.</p>
       <p>Om dit voor elkaar te krijgen vraagt niet alleen overzicht, maar ook inhoudelijke kennis en begrip voor ieders belangen — van spoorbeveiliging tot politiek — en de vertaalslag naar besluitvorming met voldoende draagvlak. Dat is de kern van hoe ik werk.</p>
+      <p class="case-footnote"><sup>*</sup> ERTMS (European Rail Traffic Management System) is de nieuwe Europese standaard voor digitale treinbeveiliging en verkeersmanagement die in Nederland het verouderde analoge ATB-systeem vervangt.</p>
     </div>
   </div>
 </section>
