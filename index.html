@@ -5,11 +5,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Cypher Horizon is interim partner bij vastgelopen vraagstukken — met een onorthodoxe, non-conformistische aanpak voor programmamanagement, verandermanagement, coalitievorming en kwartiermaker.">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <title>Cypher Horizon — Interim programma- en verandermanagement</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -20,7 +15,7 @@
     --navy-deep: #06202F;
     --chartreuse: #DFFD06;
     --paper: #F3F5F1;
-    --slate: #7C93A0;
+    --navy-grey: #4A6272;
     --slate-line: rgba(9,50,76,0.14);
     --line-on-navy: rgba(223,253,6,0.28);
     --max: 1120px;
@@ -85,7 +80,7 @@
   section.hero{ background: var(--navy); color: var(--paper); padding: 20px 0 64px; }
   .hero-row{ display:grid; grid-template-columns: var(--col) 1fr; gap:64px; align-items:center; }
   .hero-content{ max-width: var(--col); }
-  .hero-photo-wrap{ max-width: 100%; margin: 0 auto; text-align:center; align-self: start; }
+  .hero-photo-wrap{ max-width: 100%; margin: 0 auto; text-align:center; align-self: start; margin-top: 36px; }
   .hero-photo-circle{
     width: 220px;
     height: 220px;
@@ -99,24 +94,12 @@
     object-fit: cover;
     object-position: center 20%;
   }
-  .hero-photo-caption{
-    font-family:'Space Grotesk', Arial, sans-serif;
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--chartreuse);
-    margin-top: 4px;
-    line-height: 1.3;
-    white-space: normal;
-    max-width: 492px;
-    margin-left: auto;
-    margin-right: auto;
-  }
   .hero-photo-name{
     font-family:'Space Grotesk', Arial, sans-serif;
     font-size: 1.7rem;
     font-weight: 700;
     color: var(--paper);
-    margin-top: -9px;
+    margin-top: 16px;
     line-height: 1.2;
   }
   .hero-photo-role{
@@ -149,16 +132,26 @@
   }
   .drag-handle:active{ background: rgba(223,253,6,0.35); }
   .drag-row.dragging{ outline: 1px dashed var(--chartreuse); }
+  .hero-photo-claim{
+    font-family:'Space Grotesk', Arial, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--paper);
+    margin-top: 18px;
+    text-align: center;
+    text-wrap: balance;
+  }
   .hero-photo-bridge{
     font-family:'Source Serif 4', Georgia, serif;
     font-size: 1rem;
     line-height: 1.5;
     color: rgba(243,245,241,0.7);
-    margin-top: 16px;
+    margin-top: 10px;
     text-align: center;
   }
   .hero-logo-wrap{ margin-bottom: 8px; text-align:center; }
-  .hero-logo-wrap svg{ height:170px; width:auto; margin:0 auto; display:block; }
+  .hero-logo-wrap svg{ height:186px; width:auto; margin:0 auto; display:block; }
   .hero-divider{ width: calc(100% + 64px); margin: 0 -32px 40px; height:0; border-top: 1px solid var(--line-on-navy); }
   .eyebrow-mark{ display:flex; align-items:center; gap:12px; margin-bottom:22px; }
   .signal{ display:flex; align-items:center; gap:4px; height:14px; }
@@ -166,7 +159,6 @@
   h1.headline{ font-size: clamp(2.1rem, 4.4vw, 2.6rem); line-height:1.18; max-width:100%; color: var(--paper); }
   p.subhead{ font-family:'Source Serif 4', Georgia, serif; font-size:1.2rem; line-height:1.55; width:100%; color:rgba(243,245,241,0.86); margin-top:22px; }
   p.subhead-punch{ font-family:'Space Grotesk', Arial, sans-serif; font-size:1.2rem; font-weight:600; width:100%; line-height:1.2; color: var(--chartreuse); margin-top:14px; }
-  p.punch-light{ font-family:'Space Grotesk', Arial, sans-serif; font-size:1.15rem; font-weight:600; width:100%; color: var(--navy); }
   .cta-row{ display:flex; align-items:center; gap:24px; margin-top:34px; flex-wrap:wrap; }
   .btn-primary{ display:inline-block; background: var(--chartreuse); color: var(--navy-deep); font-family:'Space Grotesk', Arial, sans-serif; font-weight:600; font-size:1rem; padding:14px 26px; border-radius:2px; text-decoration:none; }
   .link-quiet{ font-family:'Space Grotesk', Arial, sans-serif; font-size:0.95rem; color: var(--paper); text-decoration:underline; text-decoration-color:rgba(243,245,241,0.4); text-underline-offset:4px; }
@@ -187,8 +179,8 @@
   .domain-hub-logo{
     position:absolute; left:50%; top:50%;
     transform: translateX(-50%);
-    margin-top: -19.1px;
-    width: 130px;
+    margin-top: -30.7px;
+    width: 154.6px;
   }
   .domain-hub-logo svg{ position:static; display:block; width:100%; height:auto; }
   .domain-node{
@@ -204,21 +196,19 @@
     white-space: nowrap;
     text-align:center;
   }
-  .domain-label{ font-family:'Space Grotesk', Arial, sans-serif; font-size:1.05rem; font-weight:500; color: var(--navy); display:inline-block; }
 
   /* ---------- DIENSTEN ---------- */
   section.diensten{ background: var(--navy); color: var(--paper); padding: 88px 0; }
   section.diensten h2{ color: var(--paper); font-size:1.7rem; margin-bottom:18px; }
-  .diensten-intro{ font-family:'Source Serif 4', Georgia, serif; font-size:1.1rem; line-height:1.5; color:rgba(243,245,241,0.86); max-width:60ch; margin-bottom:36px; }
-  .diensten-case{ margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--line-on-navy); }
+  .diensten-intro{ font-family:'Source Serif 4', Georgia, serif; font-size:1.1rem; line-height:1.5; color:rgba(243,245,241,0.86); margin-bottom:44px; }
+  .diensten-case{ margin-top: 80px; }
   .diensten-case p.case-label{ font-family:'Space Grotesk', Arial, sans-serif; font-size:0.75rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color: rgba(223,253,6,0.7); margin-bottom:10px; }
-  .diensten-case p.case-lead{ font-family:'Space Grotesk', Arial, sans-serif; font-size:1.15rem; font-weight:600; color: var(--chartreuse); margin-bottom:20px; line-height:1.4; }
+  .diensten-case p.case-lead{ font-family:'Space Grotesk', Arial, sans-serif; font-size:1.15rem; font-weight:600; color: var(--paper); margin-bottom:20px; line-height:1.4; }
   .diensten-case p{ font-family:'Source Serif 4', Georgia, serif; font-size:1.05rem; line-height:1.6; color:rgba(243,245,241,0.86); margin-bottom:18px; }
   .diensten-case p.case-footnote{ font-size:0.85rem; color:rgba(243,245,241,0.55); margin-top:8px; }
-  .service{ display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:12px 32px; padding:24px 0; border-top:1px solid var(--line-on-navy); }
-  .service:last-child{ border-bottom:1px solid var(--line-on-navy); }
-  .service h3{ font-size:1.15rem; color: var(--chartreuse); margin:0; }
-  .service-tags{ font-family:'Space Grotesk', Arial, sans-serif; font-size:0.85rem; color:rgba(243,245,241,0.55); letter-spacing:0.02em; }
+  .roles{ display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px 48px; }
+  .role h3{ font-size:1.45rem; color: var(--paper); margin:0 0 8px; letter-spacing:-0.01em; }
+  .role p{ font-family:'Source Serif 4', Georgia, serif; font-size:1.05rem; line-height:1.5; color:rgba(243,245,241,0.72); margin:0; }
 
   /* ---------- CONTACT ---------- */
   section.contact{ padding: 90px 0 100px; }
@@ -227,7 +217,7 @@
   .contact-info p.lead{ color: var(--navy-deep); width:100%; margin-top:0; margin-bottom:28px; }
   .info-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:16px; }
   .info-list li{ display:flex; flex-direction:column; gap:2px; padding-bottom:14px; border-bottom:1px solid var(--slate-line); }
-  .info-list .k{ font-family:'Space Grotesk', Arial, sans-serif; font-size:0.8rem; color: var(--slate); }
+  .info-list .k{ font-family:'Space Grotesk', Arial, sans-serif; font-size:0.8rem; color: var(--navy-grey); }
   .info-list a, .info-list .v{ font-family:'Space Grotesk', Arial, sans-serif; font-size:1.05rem; color: var(--navy-deep); text-decoration:none; }
   .linkedin-btn{ display:inline-flex; align-items:center; gap:10px; font-family:'Space Grotesk', Arial, sans-serif; font-size:0.95rem; font-weight:600; color: var(--navy-deep); text-decoration:none; background:#fff; border:1px solid var(--slate-line); padding:10px 16px; border-radius:2px; width:fit-content; margin-top:2px; }
   .linkedin-btn svg{ flex-shrink:0; }
@@ -238,7 +228,7 @@
   .field textarea{ resize:vertical; min-height:120px; }
   .form-foot{ display:flex; align-items:center; gap:18px; margin-top:4px; }
   .btn-primary.form-submit{ border:none; cursor:pointer; background: var(--navy); color: var(--paper); }
-  .form-note{ font-family:'Space Grotesk', Arial, sans-serif; font-size:0.82rem; color: var(--slate); }
+  .form-note{ font-family:'Space Grotesk', Arial, sans-serif; font-size:0.82rem; color: var(--navy-grey); }
 
   /* ---------- FOOTER ---------- */
   footer{ background: var(--navy); color: rgba(243,245,241,0.7); padding: 40px 0; }
@@ -252,24 +242,15 @@
     .pos-grid{ grid-template-columns: 1fr; gap:40px; }
     .hero-row{ grid-template-columns: 1fr; gap:40px; }
     .hero-photo-wrap{ max-width: 320px; }
-    .hero-photo-caption{ font-size: 0.85rem; white-space: normal; }
-    .domain-node{ font-size: 0.78rem; padding: 4px 8px; }
-    .service{ grid-template-columns: 1fr; gap:10px; }
-    .contact-grid{ grid-template-columns: 1fr; gap:48px; }
-    .wrap{ padding: 0 22px; }
-    .hero-divider{ width: calc(100% + 44px); margin: 0 -22px 40px; }
-    .colofon{ padding: 0 22px; }
-    #editor-toolbar{ flex-direction:column; align-items:flex-start; }
-  }
-</style>
-</head>
+  </style>
+<style>.__cwhr-sel{outline:1px solid hsl(40 70% 40%) !important;outline-offset:0;}html[data-cwhr-mode]:not(#__cwhr_),html[data-cwhr-mode] :not(#__cwhr_){cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'24'%20height%3D'24'%20viewBox%3D'0%200%2024%2024'%3E%3Cpath%20d%3D'M12%20.5h0A11.5%2011.5%200%200%201%2023.5%2012v0A11.5%2011.5%200%200%201%2012%2023.5H2.5a2%202%200%200%201-2-2V12A11.5%2011.5%200%200%201%2012%20.5Z'%20fill%3D'%23fff'%20stroke%3D'rgba(0%2C0%2C0%2C0.22)'%20stroke-width%3D'1'%2F%3E%3C%2Fsvg%3E") 1 23, url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACjklEQVR4AbRWS2gaURR9TGpiFTUEWpKQkA+EruqizWcRSBRT/G8KKpXiyo0ra1fVNiDFLmypFUo3iht/iO4Uay1FGwtFECl1p6KWLly4CGqrSMTY+wRFQ7WhGYd7Zu697845b+7M8B6BJh+UxcXFG3a7XeTxeHQAC+C12+1+ZLPZhHgMbp8FjLWxAkaj8U48Hg8lEomfIpEoLBaLLTKZTAd4LJFI3kD8HsZ+xGKxoMFgYI9T+JvAtUAg8FylUn3hcDj8ra0t6vLyMmKxWIhCofSAfZyDMRqXy+Wr1eqvPp/vKYjMAEZsRMDpdN6MRCKf+Xz+8cbGBm2kckIAtXShUGgKh8Mnfr9/Ybh0IKDT6a4vLS19EggE+wwGY7jmUj6TyUTQyv35+fmP0MbBexkISKVS+97e3u1LsU0oAo67Go3G1i/pCZjN5t3Nzc0H/zPzPlH/ip8EWvbQYrHs4hwWmN3e3n62traGfZy7MtbX12fYbPYTIKIQOzs7C6urq/cgINVWVlaO4EtjEXq9nken06mksgMZtJthtVp5xNzcHBsEIEWu0Wg0RKVS2USz2WTigFx6hPCkMTfRarXgB6WQzd/j63Q6bdK+nB7j0KnRaCCCIMpTE4D2oEql8m1qAvV6/VSr1U5PIJvN+qFjv6fyBIVC4ZfD4XgJAmekC9RqNZROp1+FQqESCCDSBWCVO1EoFC8wOQZpAnjm0Wj0O/xX94H4HNAzotvtNnreFU6lUgllMplAMpnclcvlp8NURC6Xi8BLGc5N9NvtNqpWq6hcLqN8Pn8OLUkAMe/g4EAOG4WzizcTJpPpA6zFIpfL9Ra2I45/IRgM2lKp1LtisXjs9XpvHR4eHimVythF4n78BwAA//8r8OPFAAAABklEQVQDAPCY8Oae0TJxAAAAAElFTkSuQmCC") 1 23, default !important;}html[data-cwhr-mode][data-cwhr-composing]:not(#__cwhr_),html[data-cwhr-mode][data-cwhr-composing] :not(#__cwhr_){cursor:default !important;}</style></head>
 <body id="artifacts-component-root-html">
 
 
 
 <section class="hero" id="top">
   <div class="wrap hero-grid">
-    <div class="hero-logo-wrap"><img class="hero-logo" src="hero-logo.svg" alt="Cypher Horizon" style="height:170px;width:auto;margin:0 auto;"></div>
+    <div class="hero-logo-wrap"><img class="hero-logo" src="hero-logo.svg" alt="Cypher Horizon" style="height:186px;width:auto;margin:0 auto;"></div>
     <div class="hero-divider"></div>
     <div class="hero-row">
     <div class="hero-content">
@@ -287,11 +268,11 @@
         <a href="#diensten" class="link-quiet">Bekijk de diensten</a>
       </div>
     </div>
-    <div class="hero-photo-wrap" style="margin-top: 73.1891px;">
+    <div class="hero-photo-wrap">
       <div class="hero-photo-circle"><img src="jouk-foto.jpg" alt="Jouk ter Hofstede"></div>
-      <p class="hero-photo-caption">Samen op ontdekkingstocht naar de stip op de horizon.</p>
       <p class="hero-photo-name">Jouk ter Hofstede</p>
       <p class="hero-photo-role">Oprichter Cypher Horizon</p>
+      <p class="hero-photo-claim">Vooruitgang mogelijk maken door complexe vraagstukken op te lossen en vanuit chaos overzicht te creëren, dat is wat ik graag doe.</p>
       <p class="hero-photo-bridge">Oplossingen zijn vaak niet vanzelfsprekend en kunnen schuren. Dit vraagt om lef, verbinding en gezamenlijke uitvoeringskracht.</p>
     </div>
     </div>
@@ -321,10 +302,10 @@
           <line x1="195.4" y1="210" x2="78.4" y2="142.5" stroke="rgba(9,50,76,0.25)" stroke-width="1" stroke-dasharray="3 4"></line>
         </svg>
         <div class="domain-hub-logo" title="Cypher Horizon">
-          <svg viewBox="140 51 920 456" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="53 -31 1094 614" xmlns="http://www.w3.org/2000/svg">
             <g transform="translate(0, -24)">
               <circle cx="600" cy="210" r="130" fill="#09324C"></circle>
-              <g stroke="#F3F5F1" stroke-width="7" stroke-linecap="butt">
+              <g stroke="#DFFD06" stroke-width="7" stroke-linecap="butt">
                 <line x1="506" y1="270" x2="524" y2="270"></line>
                 <line x1="640" y1="250" x2="670" y2="250"></line>
                 <line x1="532" y1="190" x2="588" y2="190"></line>
@@ -343,8 +324,8 @@
                 <line x1="536" y1="340" x2="640" y2="340"></line>
               </g>
               <line x1="640" y1="340" x2="1060" y2="340" stroke="#09324C" stroke-width="4"></line>
-              <text x="600" y="450" text-anchor="middle" font-family="'Liberation Sans', sans-serif" font-weight="700" font-size="92" letter-spacing="3" fill="#09324C">Cypher Horizon</text>
-              <text x="600" y="520" text-anchor="middle" font-family="'Liberation Sans', sans-serif" letter-spacing="6" font-size="26" fill="rgba(9,50,76,0.65)">DECODE. TRANSITION. DELIVER.</text>
+              <text x="601.25" y="450" text-anchor="middle" font-family="'Liberation Sans', sans-serif" font-weight="700" font-size="92" letter-spacing="3" fill="#09324C">Cypher Horizon</text>
+              <text x="600.5" y="520" text-anchor="middle" font-family="'Liberation Sans', sans-serif" letter-spacing="6" font-size="26" fill="rgba(9,50,76,0.65)">DECODE. TRANSITION. DELIVER.</text>
             </g>
           </svg>
         </div>
@@ -367,23 +348,25 @@
       </span>
     </div>
     <h2>Wat Cypher Horizon toevoegt</h2>
-    <p class="diensten-intro">Cypher Horizon verbindt werelden als interim partner door in het veld te staan in sectoren met grootschalige infrastructuur- en complexe stakeholdervraagstukken. Tech &amp; ICT, Bouw &amp; Infrastructuur, Transport &amp; Logistiek en Industrie &amp; Energie.</p>
+    <p class="diensten-intro">Cypher Horizon verbindt werelden als interim partner door in het veld te staan in sectoren met grootschalige infrastructuur- en complexe stakeholdervraagstukken.</p>
 
-    <div class="service">
-      <h3>Programmamanager</h3>
-      <span class="service-tags">Strategie · Scope · Uitvoering</span>
-    </div>
-    <div class="service">
-      <h3>Verandermanager</h3>
-      <span class="service-tags">Visievorming · Beweging · Innovatief</span>
-    </div>
-    <div class="service">
-      <h3>Coalitievormer</h3>
-      <span class="service-tags">Allianties · Politiek-bestuurlijk · Draagvlak</span>
-    </div>
-    <div class="service">
-      <h3>Kwartiermaker</h3>
-      <span class="service-tags">Opzetten · Momentum · Overdragen</span>
+    <div class="roles">
+      <div class="role">
+        <h3>Programmamanager</h3>
+        <p>Doel, strategie en uitvoering</p>
+      </div>
+      <div class="role">
+        <h3>Verandermanager</h3>
+        <p>Visievorming, beweging en innovatief</p>
+      </div>
+      <div class="role">
+        <h3>Coalitievormer</h3>
+        <p>Allianties, politiek-bestuurlijk en draagvlak</p>
+      </div>
+      <div class="role">
+        <h3>Kwartiermaker</h3>
+        <p>Opzetten, momentum creëren en overdragen</p>
+      </div>
     </div>
     <div class="diensten-case">
       <p class="case-label">Voorbeeld uit de praktijk</p>
@@ -443,7 +426,7 @@
       </div>
       <div class="form-foot">
         <button type="submit" class="btn-primary form-submit">Verstuur bericht</button>
-        <span class="form-note">Opent uw e-mailprogramma met dit bericht klaar om te versturen.</span>
+        <span class="form-note">Opent je e-mailprogramma met dit bericht klaar om te versturen.</span>
       </div>
     </form>
   </div>
@@ -465,6 +448,4 @@
 
 
 
-
-
-<script>document.getElementById('contactForm').addEventListener('submit', function(e){e.preventDefault();var naam=document.getElementById('naam').value;var email=document.getElementById('email').value;var bericht=document.getElementById('bericht').value;var subject=encodeURIComponent('Contact via cypherhorizon.nl — '+naam);var body=encodeURIComponent(bericht+'\n\n— '+naam+' ('+email+')');window.location.href='mailto:jouk.terhofstede@cypherhorizon.nl?subject='+subject+'&body='+body;});</script><script>(function(){function alignPhotoCaption(){var subheads=document.querySelectorAll('.hero-content p.subhead');var target=subheads[1];var wrap=document.querySelector('.hero-photo-wrap');var caption=document.querySelector('.hero-photo-caption');if(!target||!wrap||!caption)return;var diff=target.getBoundingClientRect().top-caption.getBoundingClientRect().top;var current=parseFloat(getComputedStyle(wrap).marginTop)||0;wrap.style.marginTop=(current+diff)+'px';}function run(){alignPhotoCaption();window.addEventListener('resize',alignPhotoCaption);}if(document.fonts&&document.fonts.ready){document.fonts.ready.then(run);}else{window.addEventListener('load',run);}})();</script></body></html>
+<script>document.getElementById('contactForm').addEventListener('submit', function(e){e.preventDefault();var naam=document.getElementById('naam').value;var email=document.getElementById('email').value;var bericht=document.getElementById('bericht').value;var subject=encodeURIComponent('Contact via cypherhorizon.nl — '+naam);var body=encodeURIComponent(bericht+'\n\n— '+naam+' ('+email+')');window.location.href='mailto:jouk.terhofstede@cypherhorizon.nl?subject='+subject+'&body='+body;});</script></body></html>
