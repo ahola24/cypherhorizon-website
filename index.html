@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="nl"><head>
-    
-  <style id="claude-scrollbar">@layer claude-scrollbar{*{scrollbar-width:thin}html{scrollbar-color:rgb(128 128 128 / 50%) transparent}}</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Cypher Horizon is interim partner bij vastgelopen vraagstukken — met een onorthodoxe, non-conformistische aanpak voor programmamanagement, verandermanagement, coalitievorming en kwartiermaker.">
@@ -44,38 +42,6 @@
   .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 32px; }
   :focus-visible{ outline: 2px solid var(--chartreuse); outline-offset: 3px; }
 
-  /* ---------- EDITOR CHROME (not part of the page itself) ---------- */
-  #editor-toolbar{
-    position: sticky; top:0; z-index:50;
-    background:#1c1c1c; color:#fff;
-    padding: 12px 20px;
-    font-family: Arial, sans-serif;
-    display:flex; align-items:center; justify-content:space-between;
-    gap: 16px; flex-wrap:wrap;
-  }
-  #editor-toolbar .msg{ font-size: 13px; color:#ccc; max-width:640px; }
-  #editor-toolbar .msg b{ color:#fff; }
-  #editor-toolbar button{
-    background: var(--chartreuse); color:#111; border:none;
-    font-family: Arial, sans-serif; font-weight:700; font-size:14px;
-    padding: 10px 18px; border-radius:3px; cursor:pointer; white-space:nowrap;
-  }
-  #editor-toolbar button:hover{ background:#eaff4d; }
-  #editor-toolbar .saved-note{ font-size:12px; color: var(--chartreuse); display:none; }
-  [contenteditable="true"]{
-    outline: 1px dashed rgba(9,50,76,0.35);
-    outline-offset: 3px;
-    cursor: text;
-    transition: outline-color 0.15s;
-  }
-  section.hero [contenteditable="true"],
-  section.diensten [contenteditable="true"],
-  footer [contenteditable="true"]{
-    outline: 1px dashed rgba(223,253,6,0.45);
-  }
-  [contenteditable="true"]:hover{ outline-style: solid; }
-  [contenteditable="true"]:focus{ outline-style: solid; outline-color: var(--chartreuse); }
-
   /* ---------- HERO ---------- */
   section.hero{ background: var(--navy); color: var(--paper); padding: 20px 0 64px; }
   .hero-row{ display:grid; grid-template-columns: var(--col) 1fr; gap:64px; align-items:center; }
@@ -111,27 +77,6 @@
     color: rgba(243,245,241,0.55);
     margin-top: -17px;
   }
-  .drag-row{ position:relative; display:flex; align-items:center; justify-content:center; }
-  .drag-handle{
-    position:absolute;
-    left: 50%;
-    transform: translateX(-140px);
-    width: 26px;
-    height: 26px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background: rgba(223,253,6,0.15);
-    border: 1px solid rgba(223,253,6,0.5);
-    border-radius: 4px;
-    color: var(--chartreuse);
-    font-size: 14px;
-    cursor: ns-resize;
-    user-select: none;
-    z-index: 5;
-  }
-  .drag-handle:active{ background: rgba(223,253,6,0.35); }
-  .drag-row.dragging{ outline: 1px dashed var(--chartreuse); }
   .hero-photo-claim{
     font-family:'Space Grotesk', Arial, sans-serif;
     font-size: 1.05rem;
@@ -150,8 +95,8 @@
     margin-top: 10px;
     text-align: center;
   }
-  .hero-logo-wrap{ margin-bottom: 8px; text-align:center; }
-  .hero-logo-wrap svg{ height:186px; width:auto; margin:0 auto; display:block; }
+  .hero-logo-wrap{ margin-bottom: 8px; }
+  .hero-logo{ height: 186px; width: auto; margin: 0 auto; }
   .hero-divider{ width: calc(100% + 64px); margin: 0 -32px 40px; height:0; border-top: 1px solid var(--line-on-navy); }
   .eyebrow-mark{ display:flex; align-items:center; gap:12px; margin-bottom:22px; }
   .signal{ display:flex; align-items:center; gap:4px; height:14px; }
@@ -216,7 +161,7 @@
   section.contact h2{ font-size:1.7rem; margin-bottom:16px; max-width:16ch; }
   .contact-info p.lead{ color: var(--navy-deep); width:100%; margin-top:0; margin-bottom:28px; }
   .info-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:16px; }
-  .info-list li{ display:flex; flex-direction:column; gap:2px; padding-bottom:14px; border-bottom:1px solid var(--slate-line); }
+  .info-list li{ display:flex; flex-direction:column; gap:2px; }
   .info-list .k{ font-family:'Space Grotesk', Arial, sans-serif; font-size:0.8rem; color: var(--navy-grey); }
   .info-list a, .info-list .v{ font-family:'Space Grotesk', Arial, sans-serif; font-size:1.05rem; color: var(--navy-deep); text-decoration:none; }
   .linkedin-btn{ display:inline-flex; align-items:center; gap:10px; font-family:'Space Grotesk', Arial, sans-serif; font-size:0.95rem; font-weight:600; color: var(--navy-deep); text-decoration:none; background:#fff; border:1px solid var(--slate-line); padding:10px 16px; border-radius:2px; width:fit-content; margin-top:2px; }
@@ -242,9 +187,12 @@
     .pos-grid{ grid-template-columns: 1fr; gap:40px; }
     .hero-row{ grid-template-columns: 1fr; gap:40px; }
     .hero-photo-wrap{ max-width: 320px; }
+    .contact-grid{ grid-template-columns: 1fr; gap:40px; }
+    .hero-logo{ max-width:100%; height:auto; }
+  }
   </style>
-<style>.__cwhr-sel{outline:1px solid hsl(40 70% 40%) !important;outline-offset:0;}html[data-cwhr-mode]:not(#__cwhr_),html[data-cwhr-mode] :not(#__cwhr_){cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'24'%20height%3D'24'%20viewBox%3D'0%200%2024%2024'%3E%3Cpath%20d%3D'M12%20.5h0A11.5%2011.5%200%200%201%2023.5%2012v0A11.5%2011.5%200%200%201%2012%2023.5H2.5a2%202%200%200%201-2-2V12A11.5%2011.5%200%200%201%2012%20.5Z'%20fill%3D'%23fff'%20stroke%3D'rgba(0%2C0%2C0%2C0.22)'%20stroke-width%3D'1'%2F%3E%3C%2Fsvg%3E") 1 23, url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACjklEQVR4AbRWS2gaURR9TGpiFTUEWpKQkA+EruqizWcRSBRT/G8KKpXiyo0ra1fVNiDFLmypFUo3iht/iO4Uay1FGwtFECl1p6KWLly4CGqrSMTY+wRFQ7WhGYd7Zu697845b+7M8B6BJh+UxcXFG3a7XeTxeHQAC+C12+1+ZLPZhHgMbp8FjLWxAkaj8U48Hg8lEomfIpEoLBaLLTKZTAd4LJFI3kD8HsZ+xGKxoMFgYI9T+JvAtUAg8FylUn3hcDj8ra0t6vLyMmKxWIhCofSAfZyDMRqXy+Wr1eqvPp/vKYjMAEZsRMDpdN6MRCKf+Xz+8cbGBm2kckIAtXShUGgKh8Mnfr9/Ybh0IKDT6a4vLS19EggE+wwGY7jmUj6TyUTQyv35+fmP0MbBexkISKVS+97e3u1LsU0oAo67Go3G1i/pCZjN5t3Nzc0H/zPzPlH/ip8EWvbQYrHs4hwWmN3e3n62traGfZy7MtbX12fYbPYTIKIQOzs7C6urq/cgINVWVlaO4EtjEXq9nken06mksgMZtJthtVp5xNzcHBsEIEWu0Wg0RKVS2USz2WTigFx6hPCkMTfRarXgB6WQzd/j63Q6bdK+nB7j0KnRaCCCIMpTE4D2oEql8m1qAvV6/VSr1U5PIJvN+qFjv6fyBIVC4ZfD4XgJAmekC9RqNZROp1+FQqESCCDSBWCVO1EoFC8wOQZpAnjm0Wj0O/xX94H4HNAzotvtNnreFU6lUgllMplAMpnclcvlp8NURC6Xi8BLGc5N9NvtNqpWq6hcLqN8Pn8OLUkAMe/g4EAOG4WzizcTJpPpA6zFIpfL9Ra2I45/IRgM2lKp1LtisXjs9XpvHR4eHimVythF4n78BwAA//8r8OPFAAAABklEQVQDAPCY8Oae0TJxAAAAAElFTkSuQmCC") 1 23, default !important;}html[data-cwhr-mode][data-cwhr-composing]:not(#__cwhr_),html[data-cwhr-mode][data-cwhr-composing] :not(#__cwhr_){cursor:default !important;}</style></head>
-<body id="artifacts-component-root-html">
+</head>
+<body>
 
 
 
